@@ -1,17 +1,39 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="changeChart('type','vintage','pieOptions')">饼图</button>
+    <button @click="changeChart('type','dark','appOptions')">柱图</button>
+    <button @click="changeChart('type','dark','worldCloud')">字符云</button>
+    <br />
+    <button @click="changeChart('theme','vintage')">改变主题vintage</button>
+    <button @click="changeChart('theme','dark')">改变主题dark</button>
+    <button @click="changeChart('theme','myTheme')">改变主题myTheme</button>
+    <EchartsTemp ref="echart" :options="options" @chart-click="chartClick" />
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import EchartsTemp from "./components/EchartsTemp";
+import { appOptions,pieOptions,worldCloud } from  './components/Options/app';
 export default {
   name: 'App',
+  data(){
+    return {
+      options:appOptions
+    }
+  },
+  methods:{
+    chartClick(params){
+      console.log(params);
+    },
+    changeChart(type,param,val){
+      if(type==='type'){
+        this.options = val === 'pieOptions' ? pieOptions :  val === 'appOptions' ? appOptions : worldCloud;
+      }
+      this.$refs.echart.changeChart(param,this.options);
+    }
+  },
   components: {
-    HelloWorld
+    EchartsTemp
   }
 }
 </script>
@@ -25,4 +47,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
