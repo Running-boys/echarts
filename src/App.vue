@@ -9,11 +9,14 @@
     <button @click="changeChart('theme','dark')">改变主题dark</button>
     <button @click="changeChart('theme','myTheme')">改变主题myTheme</button>
     <EchartsTemp ref="echart" :options="options" @chart-click="chartClick" />
+
+
   </div>
 </template>
 <script>
 import EchartsTemp from "./components/EchartsTemp";
 import { appOptions,pieOptions,worldCloud } from  './components/Options/app';
+import { encrypt,decrypt } from './utils/rsaEncrypt';
 export default {
   name: 'App',
   data(){
@@ -24,6 +27,8 @@ export default {
   methods:{
     chartClick(params){
       console.log(params);
+      console.log(encrypt('90'));
+      console.log(decrypt(encrypt('90')));
     },
     changeChart(type,param,val){
       if(type==='type'){
