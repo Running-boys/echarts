@@ -4,6 +4,9 @@
     <button @click="changeChart('type','vintage','pieOptions')">饼图</button>
     <button @click="changeChart('type','dark','appOptions')">柱图</button>
     <button @click="changeChart('type','dark','worldCloud')">字符云</button>
+    <button @click="changeChart('type','dark','china')">中国地图</button>
+    <button @click="changeChart('type','dark','world')">世界地图</button>
+
     <br />
     <button @click="changeChart('theme','vintage')">改变主题vintage</button>
     <button @click="changeChart('theme','dark')">改变主题dark</button>
@@ -15,7 +18,7 @@
 </template>
 <script>
 import EchartsTemp from "./components/EchartsTemp";
-import { appOptions,pieOptions,worldCloud } from  './components/Options/app';
+import { appOptions,pieOptions,worldCloud,china,world,worldAndChina } from  './components/Options/app';
 import { encrypt,decrypt } from './utils/rsaEncrypt';
 export default {
   name: 'App',
@@ -33,6 +36,9 @@ export default {
     changeChart(type,param,val){
       if(type==='type'){
         this.options = val === 'pieOptions' ? pieOptions :  val === 'appOptions' ? appOptions : worldCloud;
+        this.options = china
+        this.options = world
+        this.options = worldAndChina
       }
       this.$refs.echart.changeChart(param,this.options);
     }

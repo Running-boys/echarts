@@ -9,6 +9,9 @@ import { debounce } from '../utils';
 require('echarts/theme/vintage');
 require('echarts/theme/dark');
 require('echarts/theme/myTheme');
+require('echarts/map/js/china');
+require('echarts/map/js/world');
+require('echarts/map/js/worldAndChina');
 export default {
   name: "EchartsTemp",
   props: {
@@ -53,7 +56,7 @@ export default {
   },
   methods:{
     initChart(){
-      this.chart = echarts.init(this.$el);
+      this.chart = echarts.init(this.$el,);
       this.chart.setOption(this.options);
       this.addEvent();
     },
