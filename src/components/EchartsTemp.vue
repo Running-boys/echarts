@@ -4,8 +4,8 @@
 
 <script>
 import * as echarts from 'echarts';
-import 'echarts-wordcloud';
 import { debounce } from '../utils';
+require('echarts-wordcloud');
 require('echarts/theme/vintage');
 require('echarts/theme/dark');
 require('echarts/theme/myTheme');
@@ -56,7 +56,7 @@ export default {
   },
   methods:{
     initChart(){
-      this.chart = echarts.init(this.$el,);
+      this.chart = echarts.init(this.$el);
       this.chart.setOption(this.options);
       this.addEvent();
     },

@@ -1,4 +1,4 @@
-export const appOptions = {
+export const barOptions = {
     tooltip: {
         trigger: 'axis',
         axisPointer: {
