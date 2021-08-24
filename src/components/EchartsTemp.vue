@@ -45,6 +45,9 @@ export default {
       }
     }, 10)
     window.addEventListener('resize', this.__resizeHandler);
+    this.$nextTick(()=>{
+      this.chart.resize();
+    })
   },
   beforeDestroy() {
     if (!this.chart) {

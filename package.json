@@ -12,7 +12,10 @@
     "echarts": "^5.1.1",
     "echarts-wordcloud": "^2.0.0",
     "jsencrypt": "^3.2.0",
+    "lodash": "^4.17.21",
+    "svg-sprite-loader": "^6.0.9",
     "vue": "^2.6.11",
+    "vue-draggable-resizable-os": "^2.1.0",
     "vue-router": "^3.5.1"
   },
   "devDependencies": {
@@ -22,6 +25,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "vue-particles": "^1.0.9",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
