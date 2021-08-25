@@ -21,7 +21,7 @@
 <!--    </vue-particles>-->
 
     <div style="height: 600px;width: 100%;">
-      <vue-draggable-area :data="list" :model="false" ref="area" @resizestop="onResizestop">
+      <vue-draggable-area :data="list" :model="true" ref="area" @resizestop="onResizestop">
 
       </vue-draggable-area>
     </div>
@@ -110,6 +110,34 @@ export default {
   },
   mounted() {
     this.changeChart(this.bar,this.theme);
+
+
+
+    // var x = 0;
+    //
+    // while (x < 30){
+    //   var y = 30 - x;
+    //   if((3*x) + (5*y) === 116){
+    //     console.log(x,y)
+    //     break
+    //   }
+    //   x++
+    // }
+
+
+
+    var i5 = 0;
+
+    while (i5 < 20){
+      var j10 = 20 - i5;
+      if((5*i5)+(10*j10)===175){
+        console.log(i5,j10)
+        break
+      }
+      i5++
+    }
+
+
   },
   methods:{
     a(){
@@ -128,8 +156,8 @@ export default {
       this.theme = theme;
       this.$refs.echart.changeChart(this.theme,this.options);
     },
-    onResizestop(id,list){
-      console.log(id,list,this.$refs.area)
+    onResizestop(id,data){
+      this.$refs.area.getItemEl(data.data.find(item=>item.id===id),'child').changeResize()
     }
   },
   components: {
@@ -146,7 +174,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
   position: relative;
 }
 #particles-js{

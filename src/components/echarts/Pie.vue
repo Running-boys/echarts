@@ -1,5 +1,5 @@
 <template>
-  <EchartsTemp :options="options" :height="'100%'" />
+  <EchartsTemp :options="options" :height="'100%'" ref="pie"  />
 </template>
 
 <script>
@@ -17,7 +17,9 @@ export default {
     }
   },
   methods:{
-
+      changeResize(){
+        console.log(this.$refs.pie.chart.resize())
+      }
   }
 }
 </script>

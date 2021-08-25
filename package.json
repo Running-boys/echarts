@@ -15,7 +15,7 @@
     "lodash": "^4.17.21",
     "svg-sprite-loader": "^6.0.9",
     "vue": "^2.6.11",
-    "vue-draggable-resizable-os": "^2.1.0",
+    "vue-draggable-resizable-os": "^2.1.4",
     "vue-router": "^3.5.1"
   },
   "devDependencies": {

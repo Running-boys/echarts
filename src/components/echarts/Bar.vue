@@ -1,5 +1,5 @@
 <template>
-  <EchartsTemp :options="options" :height="'100%'" />
+  <EchartsTemp :options="options" :height="'100%'" ref="bar" />
 </template>
 
 <script>
@@ -14,6 +14,11 @@ export default {
   data(){
     return {
       options: barOptions
+    }
+  },
+  methods:{
+    changeResize(){
+      console.log(this.$refs.bar.chart.resize())
     }
   }
 }
